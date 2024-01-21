@@ -1,31 +1,30 @@
-"""Sample API Client."""
-from __future__ import annotations
-
 import asyncio
 import socket
+from urllib.parse import urljoin
 
 import aiohttp
 import async_timeout
 
+from .const import API_URL, FLASHES_API_URL
 
-class IntegrationBlueprintApiClientError(Exception):
+
+class EmeraldApiClientError(Exception):
     """Exception to indicate a general API error."""
 
 
-class IntegrationBlueprintApiClientCommunicationError(
-    IntegrationBlueprintApiClientError
+class EmeraldApiClientCommunicationError(
+    EmeraldApiClientError
 ):
     """Exception to indicate a communication error."""
 
 
-class IntegrationBlueprintApiClientAuthenticationError(
-    IntegrationBlueprintApiClientError
+class EmeraldApiClientAuthenticationError(
+    EmeraldApiClientError
 ):
     """Exception to indicate an authentication error."""
 
 
-class IntegrationBlueprintApiClient:
-    """Sample API Client."""
+class EmeraldApiClient:
 
     def __init__(
         self,
@@ -33,24 +32,21 @@ class IntegrationBlueprintApiClient:
         password: str,
         session: aiohttp.ClientSession,
     ) -> None:
-        """Sample API Client."""
+
         self._username = username
         self._password = password
         self._session = session
 
-    async def async_get_data(self) -> any:
-        """Get data from the API."""
+    async def sign_in(self) -> str:
+        """Sign-in using username & password and return the access token."""
         return await self._api_wrapper(
-            method="get", url="https://jsonplaceholder.typicode.com/posts/1"
+            method="post", url=urljoin(API_URL, "/customers/sign-in")
         )
 
-    async def async_set_title(self, value: str) -> any:
+    async def get_properties(self) -> any:
         """Get data from the API."""
         return await self._api_wrapper(
-            method="patch",
-            url="https://jsonplaceholder.typicode.com/posts/1",
-            data={"title": value},
-            headers={"Content-type": "application/json; charset=UTF-8"},
+            method="get", url=urljoin(API_URL, "/customers/s")
         )
 
     async def _api_wrapper(
@@ -70,21 +66,21 @@ class IntegrationBlueprintApiClient:
                     json=data,
                 )
                 if response.status in (401, 403):
-                    raise IntegrationBlueprintApiClientAuthenticationError(
+                    raise EmeraldApiClientAuthenticationError(
                         "Invalid credentials",
                     )
                 response.raise_for_status()
                 return await response.json()
 
         except asyncio.TimeoutError as exception:
-            raise IntegrationBlueprintApiClientCommunicationError(
+            raise EmeraldApiClientCommunicationError(
                 "Timeout error fetching information",
             ) from exception
         except (aiohttp.ClientError, socket.gaierror) as exception:
-            raise IntegrationBlueprintApiClientCommunicationError(
+            raise EmeraldApiClientCommunicationError(
                 "Error fetching information",
             ) from exception
         except Exception as exception:  # pylint: disable=broad-except
-            raise IntegrationBlueprintApiClientError(
+            raise EmeraldApiClientError(
                 "Something really wrong happened!"
             ) from exception

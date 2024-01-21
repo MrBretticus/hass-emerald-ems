@@ -1,0 +1,12 @@
+{
+  "domain": "emerald_ems",
+  "name": "Emerald EMS",
+  "codeowners": [
+    "@mrbretticus"
+  ],
+  "config_flow": true,
+  "documentation": "https://github.com/mrbretticus/hass-emerald-ems",
+  "iot_class": "cloud_polling",
+  "issue_tracker": "https://github.com/mrbretticus/hass-emerald-ems/issues",
+  "version": "0.1.0"
+}
