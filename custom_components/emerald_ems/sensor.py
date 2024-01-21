@@ -26,13 +26,11 @@ async def setup_sensor(hass, entry, async_add_devices):
 
 
 class EmeraldSensor(EmeraldEntity, SensorEntity):
-
     def __init__(
         self,
         coordinator: EmeraldDataUpdateCoordinator,
         entity_description: SensorEntityDescription,
     ) -> None:
-
         super().__init__(coordinator)
         self.entity_description = entity_description
 

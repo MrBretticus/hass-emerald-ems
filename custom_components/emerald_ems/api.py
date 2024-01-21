@@ -5,34 +5,28 @@ from urllib.parse import urljoin
 import aiohttp
 import async_timeout
 
-from .const import API_URL, FLASHES_API_URL
+from .const import API_URL
 
 
 class EmeraldApiClientError(Exception):
     """Exception to indicate a general API error."""
 
 
-class EmeraldApiClientCommunicationError(
-    EmeraldApiClientError
-):
+class EmeraldApiClientCommunicationError(EmeraldApiClientError):
     """Exception to indicate a communication error."""
 
 
-class EmeraldApiClientAuthenticationError(
-    EmeraldApiClientError
-):
+class EmeraldApiClientAuthenticationError(EmeraldApiClientError):
     """Exception to indicate an authentication error."""
 
 
 class EmeraldApiClient:
-
     def __init__(
         self,
         username: str,
         password: str,
         session: aiohttp.ClientSession,
     ) -> None:
-
         self._username = username
         self._password = password
         self._session = session
