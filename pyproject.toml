@@ -1,0 +1,36 @@
+[tool.poetry]
+name = "hass-emerald-ems"
+version = "0.1.0"
+description = "Home Assistant custom integration to fetch data from Emerald EMS"
+authors = ["Brett Errington <253641+MrBretticus@users.noreply.github.com>"]
+license = "MIT"
+readme = "README.md"
+packages = [{ include = "custom_components/emerald_ems" }]
+
+[tool.poetry.dependencies]
+python = ">=3.11,<3.13"
+
+[tool.poetry.group.dev]
+optional = true
+
+[tool.poetry.group.dev.dependencies]
+homeassistant = "^2024.1.5"
+colorlog = "^6.8.2"
+ruff = "^0.1.15"
+
+[tool.poetry.group.test]
+optional = true
+
+[tool.poetry.group.test.dependencies]
+pytest-homeassistant-custom-component = "^0.13.91"
+
+[tool.pytest.ini_options]
+testpaths = "tests"
+python_files = ["test_*.py", "when_*.py"]
+python_functions = ["test_*", "it_*"]
+#addopts = "-p anyio -p aiohttp -p asyncio -p pytest_cov -p freezer -p picked -p socket -p test-groups -p unordered -p syrupy"
+asyncio_mode = "auto"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

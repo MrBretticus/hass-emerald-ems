@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+set -e
+
+cd "$(dirname "$0")/.."
+
+poetry export -f requirements.txt --with dev,test --without-hashes | awk '{ print $1 }' FS=';' > requirements_export.txt
