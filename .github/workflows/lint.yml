@@ -38,4 +38,4 @@ jobs:
           run: python3 -m poetry install --with dev
 
         - name: "Run"
-          run: python3 -m ruff check .
+          run: python3 -m poetry run ruff check .
