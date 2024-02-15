@@ -36,17 +36,16 @@ ignore = [
 	"D411", # Missing blank line before section
 	"E501", # line too long
 	"E731", # do not assign a lambda expression, use a def
-
-	# TODO: disabled until ready
-	"D100", # Missing docstring in public module
-	"D101", # Missing docstring in public class
-	"D103", # Missing docstring in public function
-	"D107", # Missing docstring in `__init__`
 ]
 
 [lint.per-file-ignores]
-"__init__.py" = ["D104"]
-#"**/tests/*" = ["D100"]
+"**/tests/*" = [
+	"D100", # Missing docstring in public module
+	"D101", # Missing docstring in public class
+	"D103", # Missing docstring in public function
+	"D104", # Missing docstring in public package
+	"D107", # Missing docstring in `__init__`
+]
 
 [flake8-pytest-style]
 fixture-parentheses = false

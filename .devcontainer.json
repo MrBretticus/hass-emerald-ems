@@ -19,6 +19,7 @@
 				"ryanluker.vscode-coverage-gutters",
 				"ms-python.vscode-pylance",
 				"ms-python.pylint",
+				"ms-python.debugpy",
 				"charliermarsh.ruff",
 				"editorconfig.editorconfig",
 				"github.vscode-github-actions"
@@ -40,5 +41,8 @@
 	"remoteUser": "vscode",
 	"features": {
 		"ghcr.io/devcontainers/features/rust:1": {}
+	},
+	"containerEnv": {
+		"PYTHONDONTWRITEBYTECODE": "1"
 	}
 }

@@ -1,6 +1,7 @@
 # artifacts
 __pycache__
 .pytest*
+.ruff_cache
 *.egg-info
 */build/*
 */dist/*
@@ -9,7 +10,7 @@ __pycache__
 # misc
 .coverage
 .vscode
-.venv
+.venv*
 coverage.xml
 
 
