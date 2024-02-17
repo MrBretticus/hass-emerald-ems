@@ -23,6 +23,7 @@ optional = true
 
 [tool.poetry.group.test.dependencies]
 pytest-homeassistant-custom-component = "^0.13.91"
+python-dotenv = "^1.0.1"
 
 [tool.pytest.ini_options]
 testpaths = "tests"
