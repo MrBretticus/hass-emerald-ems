@@ -51,7 +51,7 @@ paho-mqtt==1.6.1
 pipdeptree==2.13.2
 pluggy==1.4.0
 pycparser==2.21
-pydantic==1.10.12
+pydantic==2.7.1
 PyJWT==2.8.0
 pylint-per-file-ignores==1.2.1
 pyOpenSSL==24.0.0
