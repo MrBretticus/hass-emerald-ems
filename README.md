@@ -1,4 +1,4 @@
-# Emerald EMS
+# Home Assistant custom integration to fetch data from Emerald EMS
 
 [![GitHub Release][releases-shield]][releases]
 [![GitHub Activity][commits-shield]][commits]
@@ -12,6 +12,9 @@
 
 [![hacs][hacsbadge]][hacs]
 
+> [!WARNING]  
+> This integration is not ready for use.
+
 _[Emerald EMS][emerald-ems] integration for [Home Assistant][home-assistant]._
 
 **This integration will set up the following platforms.**
@@ -19,7 +22,6 @@ _[Emerald EMS][emerald-ems] integration for [Home Assistant][home-assistant]._
 Platform | Description
 -- | --
 `sensor` | Show info from the Emerald EMS API.
-
 
 ## Automatic Installation
 
@@ -44,21 +46,19 @@ Platform | Description
 
 <!---->
 
-## Contributions are welcome!
+## Contributions are welcome
 
 If you want to contribute to this please read the [Contribution guidelines](CONTRIBUTING.md)
 
 ***
 
 [emerald-ems]: http://emerald-ems.com.au/
-[hass-emerald-ems]: https://github.com/mrbretticus/hass_emerald_ems
 [buymecoffee]: https://www.buymeacoffee.com/mrbretticus
 [buymecoffeebadge]: https://img.shields.io/badge/buy%20me%20a%20coffee-donate-yellow.svg?style=for-the-badge
 [commits-shield]: https://img.shields.io/github/commit-activity/y/mrbretticus/hass_emerald_ems.svg?style=for-the-badge
 [commits]: https://github.com/mrbretticus/hass_emerald_ems/commits/main
 [discord]: https://discord.gg/BW2tZZVH
 [discord-shield]: https://img.shields.io/discord/330944238910963714.svg?style=for-the-badge
-[exampleimg]: example.png
 [forum-shield]: https://img.shields.io/badge/community-forum-brightgreen.svg?style=for-the-badge
 [home-assistant]: https://home-assistant.io
 [forum]: https://community.home-assistant.io/
