@@ -1,6 +1,6 @@
 {
 	"name": "Emerald EMS",
-	"filename": "hass_emerald_ems.zip",
+	"filename": "hass-emerald-ems.zip",
 	"hide_default_branch": true,
 	"homeassistant": "2023.8.0",
 	"hacs": "1.33.0",
